@@ -31,8 +31,14 @@
              {{/user.shares}}
             <br><br>
             <ul class="list-group">
-                <li class="list-group-item">City  : {{user.location.city}}</li>
-                <li class="list-group-item">State : {{user.location.state}}</li>
+            {{#user.location}}
+                <li class="list-group-item">City  : {{city}}</li>
+                <li class="list-group-item">State : {{state}}</li>
+                <li class="list-group-item">Country  : {{country}}</li>
+                <li class="list-group-item">Continent : {{continent}}</li>
+                <!--<li class="list-group-item">Planet  : {{planet}}</li>
+                <li class="list-group-item">Galaxy : {{galaxy}}</li>-->
+            {{/user.location}}
             </ul>
             <h3><strong>Bio</strong> : {{user.Bio}}</h3>
         </div>
@@ -51,7 +57,7 @@
             user:{
                 name:'SHEKHAR ANAND',
                 Age:20,
-                Bio:'Hi, I am Shekhar Anand and I am pursuing B.Tech in Computer' +
+                Bio:'Hello, I am pursuing B.Tech in Computer' +
                     ' Science from Lovely Professional University.',
                 avatar:'Img/myprophoto.jpg',
                 shares:{
@@ -62,7 +68,11 @@
                 },
                 location:{
                     city:'Chapra',
-                    state:'Bihar'
+                    state:'Bihar',
+                    country:'India',
+                    continent:'Asia',
+                    planet:'Earth',
+                    galaxy:'Milky Way'
                 }
             },
             construction:{
